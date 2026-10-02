@@ -6,7 +6,6 @@ export interface Profile {
   location: string;
   linkedin: string;
   github: string;
-  twitter?: string;
 }
 
 export interface Project {

@@ -8,7 +8,7 @@ import { Select } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { validateContactForm } from '@/lib/validations';
 import { ContactFormData } from '@/types';
-import { Mail, Linkedin, Github, Twitter, Send } from 'lucide-react';
+import { Mail, Linkedin, Github, Send } from 'lucide-react';
 import { SOCIAL_LINKS } from '@/lib/constants';
 
 export default function Contact() {
@@ -208,7 +208,7 @@ export default function Contact() {
                   <Mail className="h-5 w-5 text-[#10B981]" aria-hidden="true" />
                   <div>
                     <p className="text-sm font-medium text-[#F3F4F6]">Email</p>
-                    <p className="text-sm text-[#9CA3AF]">shashank@example.com</p>
+                    <p className="text-sm text-[#9CA3AF]">{SOCIAL_LINKS.email}</p>
                   </div>
                 </a>
                 <a
@@ -233,18 +233,6 @@ export default function Contact() {
                   <div>
                     <p className="text-sm font-medium text-[#F3F4F6]">GitHub</p>
                     <p className="text-sm text-[#9CA3AF]">View my code</p>
-                  </div>
-                </a>
-                <a
-                  href={SOCIAL_LINKS.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 rounded-lg border border-[#1A2130] bg-[#0A0D12] p-4 transition-colors hover:border-[#10B981] hover:bg-[#1A2130]"
-                >
-                  <Twitter className="h-5 w-5 text-[#10B981]" aria-hidden="true" />
-                  <div>
-                    <p className="text-sm font-medium text-[#F3F4F6]">Twitter</p>
-                    <p className="text-sm text-[#9CA3AF]">Follow for updates</p>
                   </div>
                 </a>
               </CardContent>

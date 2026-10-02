@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://shashankpatel.dev/sitemap.xml',
+    sitemap: 'https://shashank151299.github.io/Profile/sitemap.xml',
   };
 }

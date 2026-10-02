@@ -13,7 +13,7 @@ export const projects: Project[] = [
       'Dynamic filter modulations',
       'AI-powered audio analysis',
     ],
-    github: 'https://github.com/shashankpatel/alterecho',
+    github: 'https://github.com/shashank151299/alterecho',
     liveDemo: 'https://alterecho.demo',
   },
   {
@@ -28,7 +28,7 @@ export const projects: Project[] = [
       'Customizable agent personas',
       'Multi-model API integration',
     ],
-    github: 'https://github.com/shashankpatel/mychatgpt',
+    github: 'https://github.com/shashank151299/mychatgpt',
     liveDemo: 'https://mychatgpt.demo',
   },
   {
@@ -43,6 +43,6 @@ export const projects: Project[] = [
       'Real-time facial recognition',
       'Automated attendance logging',
     ],
-    github: 'https://github.com/shashankpatel/rfid-attendance',
+    github: 'https://github.com/shashank151299/rfid-attendance',
   },
 ];

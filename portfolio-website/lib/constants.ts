@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://shashankpatel.dev';
+export const SITE_URL = 'https://shashank151299.github.io/Profile';
 
 export const COLORS = {
   background: '#0A0D12',
@@ -26,8 +26,7 @@ export const TERMINAL_COMMANDS = {
 } as const;
 
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/in/shashankpatel',
-  github: 'https://github.com/shashankpatel',
-  twitter: 'https://twitter.com/shashankpatel',
-  email: 'shashank@example.com',
+  linkedin: 'https://www.linkedin.com/in/shashankpatel15/',
+  github: 'https://github.com/shashank151299',
+  email: 'mr.shashank1999@gmail.com',
 } as const;

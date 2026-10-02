@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://shashankpatel.dev',
+    url: 'https://shashank151299.github.io/Profile',
     siteName: 'Shashank Patel - Portfolio',
     title: 'Shashank Patel | Software Engineer & Data Systems Specialist',
     description: 'Software Engineer specializing in ELK Stack observability, high-throughput data processing, and real-time AI systems.',
@@ -38,13 +38,6 @@ export const metadata: Metadata = {
         alt: 'Shashank Patel Portfolio',
       },
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Shashank Patel | Software Engineer & Data Systems Specialist',
-    description: 'Software Engineer specializing in ELK Stack observability, high-throughput data processing, and real-time AI systems.',
-    images: ['/og-image.png'],
-    creator: '@shashankpatel',
   },
   robots: {
     index: true,
@@ -88,11 +81,10 @@ export default function RootLayout({
               '@type': 'Person',
               name: 'Shashank Patel',
               jobTitle: 'Software Engineer & Data Systems Specialist',
-              url: 'https://shashankpatel.dev',
+              url: 'https://shashank151299.github.io/Profile',
               sameAs: [
-                'https://linkedin.com/in/shashankpatel',
-                'https://github.com/shashankpatel',
-                'https://twitter.com/shashankpatel',
+                'https://www.linkedin.com/in/shashankpatel15/',
+                'https://github.com/shashank151299',
               ],
               knowsAbout: [
                 'Software Engineering',

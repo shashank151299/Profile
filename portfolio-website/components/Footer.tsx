@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { SOCIAL_LINKS } from '@/lib/constants';
 
 export default function Footer() {
@@ -34,15 +34,6 @@ export default function Footer() {
               className="text-[#9CA3AF] transition-colors hover:text-[#10B981] focus:text-[#10B981]"
             >
               <Linkedin className="h-5 w-5" aria-hidden="true" />
-            </a>
-            <a
-              href={SOCIAL_LINKS.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter Profile"
-              className="text-[#9CA3AF] transition-colors hover:text-[#10B981] focus:text-[#10B981]"
-            >
-              <Twitter className="h-5 w-5" aria-hidden="true" />
             </a>
             <a
               href={SOCIAL_LINKS.email}
