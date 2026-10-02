@@ -40,10 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Amplify
-.amplify/
-#amplify/
-
 # IDE
 .vscode/
 .idea/
@@ -54,3 +50,10 @@ next-env.d.ts
 # OS
 Thumbs.db
 .DS_Store
+
+# Amplify
+.amplify/
+#amplify/
+
+# Development
+.devin/
