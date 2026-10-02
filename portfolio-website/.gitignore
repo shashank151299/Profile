@@ -40,6 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Amplify
+.amplify/
+#amplify/
+
 # IDE
 .vscode/
 .idea/
