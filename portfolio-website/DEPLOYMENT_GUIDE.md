@@ -142,55 +142,15 @@ git checkout main
    - Select the branch: `main`
 
 2. **Configure Build Settings**:
-   - Amplify will auto-detect Next.js settings
-   - Review the auto-detected configuration
-   - Modify if necessary (see Build Settings below)
+   - Select **My app is a monorepo**
+   - Set the app root to `portfolio-website`
+   - The repository-root `amplify.yml` configures dependency installation, the Next.js build, artifacts, and dependency caching
 
 ### Step 4: Configure Build Settings
 
-Amplify will auto-generate build settings for Next.js. If you need to customize, create `amplify.yml` in your repository root:
+The build configuration is tracked in `amplify.yml` at the repository root. For this repository, Amplify must treat `portfolio-website` as the app root because that is where `package.json` and the Next.js application are located.
 
-```yaml
-version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm ci
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: .next
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
-```
-
-**Alternative: Amplify Console Build Settings**
-
-In the Amplify Console, under "Build settings", you can configure:
-
-```yaml
-version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm install
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: .next
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
-```
+For an existing Amplify app, verify that its environment variables include `AMPLIFY_MONOREPO_APP_ROOT=portfolio-website` for the deployed branch. New monorepo apps receive this variable when the app root is selected during setup.
 
 ### Step 5: Configure Environment Variables
 
@@ -349,10 +309,10 @@ git push origin main
 **Error**: Site loads but shows blank page
 
 **Solutions**:
-1. Check browser console for JavaScript errors
-2. Verify `next.config.js` has correct asset prefix
-3. Ensure static files are properly configured
-4. Check CloudFront distribution settings
+1. Confirm the repository-root `amplify.yml` is being used and its `appRoot` is `portfolio-website`
+2. For an existing Amplify app, confirm `AMPLIFY_MONOREPO_APP_ROOT` is set to `portfolio-website` for the deployed branch
+3. Check browser console and Amplify build logs for missing assets or an incorrect artifact directory
+4. Verify `next.config.js` has the expected asset prefix and check CloudFront distribution settings
 
 **Issue: Routing Issues**
 

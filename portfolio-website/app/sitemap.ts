@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/constants';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://shashank151299.github.io/Profile',
+      url: SITE_URL,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,

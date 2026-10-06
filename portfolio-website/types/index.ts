@@ -15,8 +15,10 @@ export interface Project {
   tagline: string;
   tech: string[];
   highlights: string[];
+  featured: boolean;
   github?: string;
   liveDemo?: string;
+  demoNote?: string;
   image?: string;
 }
 

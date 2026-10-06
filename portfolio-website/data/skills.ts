@@ -2,23 +2,23 @@ import { SkillCategory } from '@/types';
 
 export const skills: SkillCategory[] = [
   {
-    category: 'Backend & Systems',
+    category: 'Backend & APIs',
     icon: 'Server',
-    skills: ['Python', 'Java (Spring Boot)', 'Node.js', 'C++', 'Shell Scripting', 'SQL'],
+    skills: ['Java', 'Spring Boot', 'Python', 'Node.js', 'REST APIs', 'SQL'],
   },
   {
-    category: 'Frontend & UI',
+    category: 'Data & Integration',
     icon: 'Layout',
-    skills: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'HTML5/CSS3', 'Jest', 'Figma', 'Adobe XD'],
+    skills: ['Apache NiFi', 'Apache Kafka', 'PostgreSQL', 'Elasticsearch', 'Logstash', 'Kibana'],
   },
   {
-    category: 'Data Engineering',
+    category: 'Reliability & Platforms',
     icon: 'Database',
-    skills: ['ELK Stack (Elasticsearch, Logstash, Kibana)', 'Apache NiFi', 'PostgreSQL', 'Firebase'],
+    skills: ['Dynatrace', 'MoogSoft', 'OpenShift / Kubernetes', 'Docker', 'GitHub Actions', 'UrbanCode Deploy'],
   },
   {
-    category: 'Tools & DevOps',
+    category: 'Web & Testing',
     icon: 'Wrench',
-    skills: ['Docker', 'Git', 'CI/CD pipelines', 'Cloud Automation'],
+    skills: ['React', 'Next.js', 'TypeScript', 'Jest', 'pytest', 'Postman'],
   },
 ];

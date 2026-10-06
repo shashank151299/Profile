@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://shashank151299.github.io/Profile';
+export const SITE_URL = 'https://main.d2ijtjtef0n0m6.amplifyapp.com';
 
 export const COLORS = {
   background: '#0A0D12',

@@ -19,7 +19,9 @@ export default function Contact() {
     message: '',
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'sending' | 'success' | 'error'
+  >('idle');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -32,7 +34,7 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     const validation = validateContactForm(formData);
@@ -41,22 +43,40 @@ export default function Contact() {
       return;
     }
 
-    // Use mailto link for quick implementation
-    const subject = `Portfolio Contact: ${formData.subject}`;
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:${SOCIAL_LINKS.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    window.location.href = mailtoLink;
-    
-    setSubmitStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setSubmitStatus('sending');
+
+    const submission = Object.fromEntries(new FormData(e.currentTarget).entries());
+    submission._subject = `Portfolio Contact: ${formData.subject}`;
+    submission._template = 'table';
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${SOCIAL_LINKS.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(submission),
+      });
+      const result: { success?: boolean; message?: string } = await response.json();
+
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || `FormSubmit returned HTTP ${response.status}.`);
+      }
+
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Unable to submit the portfolio contact form.', error);
+      setSubmitStatus('error');
+    }
   };
 
   return (
     <section id="contact" className="py-20 scroll-mt-20">
       <div className="container mx-auto px-4">
         <h2 className="mb-8 text-3xl font-bold text-[#F3F4F6] md:text-4xl">
-          Get In Touch
+          Let’s talk
         </h2>
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Contact Form */}
@@ -165,7 +185,7 @@ export default function Contact() {
                 {/* Honeypot field for spam protection */}
                 <input
                   type="text"
-                  name="website"
+                  name="_honey"
                   className="hidden"
                   tabIndex={-1}
                   autoComplete="off"
@@ -175,19 +195,24 @@ export default function Contact() {
                 <Button
                   type="submit"
                   className="w-full"
+                  disabled={submitStatus === 'sending'}
                 >
                   <Send className="mr-2 h-4 w-4" />
-                  Send via Email
+                  {submitStatus === 'sending' ? 'Sending…' : 'Send Message'}
                 </Button>
 
                 {submitStatus === 'success' && (
                   <p className="text-center text-sm text-[#10B981]" role="status">
-                    Email client opened! Please send the message to complete.
+                    Message sent successfully. Thanks for reaching out!
                   </p>
                 )}
                 {submitStatus === 'error' && (
                   <p className="text-center text-sm text-[#EF4444]" role="alert">
-                    Something went wrong. Please try again.
+                    We couldn’t send your message. Please try again or email{' '}
+                    <a className="underline" href={`mailto:${SOCIAL_LINKS.email}`}>
+                      {SOCIAL_LINKS.email}
+                    </a>
+                    .
                   </p>
                 )}
               </form>

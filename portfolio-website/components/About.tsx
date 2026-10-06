@@ -37,33 +37,32 @@ export default function About() {
               </div>
               <div className="space-y-4">
                 <h4 className="text-lg font-semibold text-[#F3F4F6]">
-                  Engineering Philosophy
+                  How I work
                 </h4>
                 <p className="text-[#9CA3AF] leading-relaxed">
-                  I believe in building systems that are not only functional but
-                  also maintainable, scalable, and performant. My approach
-                  combines deep technical expertise with a focus on user
-                  experience and business value.
+                  I start by understanding the operational problem, then build
+                  and support a solution that is maintainable, observable, and
+                  useful to the people relying on it.
                 </p>
                 <h4 className="text-lg font-semibold text-[#F3F4F6]">
-                  Key Focus Areas
+                  Areas of focus
                 </h4>
                 <ul className="space-y-2 text-[#9CA3AF]">
                   <li className="flex items-start gap-2">
                     <span className="text-[#10B981] mt-1">▹</span>
-                    <span>High-throughput data processing pipelines</span>
+                    <span>Backend services and API integrations</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#10B981] mt-1">▹</span>
-                    <span>Real-time observability and monitoring</span>
+                    <span>Reliable data pipelines and reconciliation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#10B981] mt-1">▹</span>
-                    <span>AI-powered audio signal processing</span>
+                    <span>Observability and workflow automation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#10B981] mt-1">▹</span>
-                    <span>Interactive web applications</span>
+                    <span>Turning business needs into production software</span>
                   </li>
                 </ul>
               </div>
